@@ -152,9 +152,17 @@ class JKPostVideoVC: UIViewController{
     }
     @objc func didFinishSavingWithError (path pth:String ,error:Error?,contextInfo:Any?) {
         if error == nil {
-            print("保存成功")
+            let alert = UIAlertController.init(title: "提示", message: "保存视频成功", preferredStyle: .alert)
+            
+            let action2 = UIAlertAction.init(title: "确定", style: .default, handler: { (action)
+                self.dismiss(animated: true, completion: nil)
+            })
+            alert.addAction(action2)
+            self.present(alert, animated: true, completion: nil)
         }
     }
+    
+    
     //获取合成视频之后的路径  我这里直接将合成后的视频 移动到系统相册
     func getVideoMargeFilePath() -> String {
         let tempath = NSTemporaryDirectory() + "/videoFolder"

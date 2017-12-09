@@ -14,7 +14,7 @@ let ScreenH = UIScreen.main.bounds.size.height
 class JKVideoControlView: UIView {
     
     weak var delegate : CYTControlViewDelegate?
-    
+    //点击下一步 即可保存到本地相册查看
     lazy var nextBtn : UIButton = {
        let btn = UIButton.init(type: .custom)
         btn.setTitle("下一步", for: .normal)
@@ -198,11 +198,12 @@ class JKVideoControlView: UIView {
         currentTime += 0.05
         
         progressView.progress = Float(currentTime/totalTime)
-        if currentTime >= 3.0 {
+        if currentTime >= 3.0 {//最短时间需要3s
             nextBtn.isHidden = false
         }
         if currentTime >= totalTime {
             delegate?.nextStepBtnClick()
+            self.pauseMusic()
         }
     }
     
