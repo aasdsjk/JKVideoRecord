@@ -154,7 +154,7 @@ class JKPostVideoVC: UIViewController{
         if error == nil {
             let alert = UIAlertController.init(title: "提示", message: "保存视频成功", preferredStyle: .alert)
             
-            let action2 = UIAlertAction.init(title: "确定", style: .default, handler: { (action)
+            let action2 = UIAlertAction.init(title: "确定", style: .default, handler: {(action) in
                 self.dismiss(animated: true, completion: nil)
             })
             alert.addAction(action2)
