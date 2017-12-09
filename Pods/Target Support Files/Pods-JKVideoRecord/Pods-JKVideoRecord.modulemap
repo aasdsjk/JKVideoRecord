@@ -1,0 +1,6 @@
+framework module Pods_JKVideoRecord {
+  umbrella header "Pods-JKVideoRecord-umbrella.h"
+
+  export *
+  module * { export * }
+}
